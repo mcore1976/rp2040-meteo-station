@@ -27,13 +27,17 @@ void setup() {
 
   set_sys_clock_khz(20000, true); // Lowering CPU System clock to 20000 kHz to save energy
   // set_sys_clock_48mhz(); // Set System clock back to 48 MHz 
- 
-// launch I2C for BMP280 sensor
+  
+// Setup serial port for debug messages
+  Serial.begin(115200);
+  
+// launch I2C bus #1 for BMP280 sensor
+// You may put different GPx pin numbers here if using different board  
   Wire.setSDA(4); // Set SDA pin for I2C0 on RP2040
   Wire.setSCL(5); // Set SCL pin for I2C0 on RP2040
   Wire.begin();   // Initialize I2C communication - bus #1
 
-Serial.println(F("Testing BMP280 pressure sensor..."));
+  Serial.println(F("Testing BMP280 pressure sensor..."));
   if (!bmp.begin()) Serial.println(F("Pressure sensor NOT detected!"));
 
 // launching AHT20 sensor
@@ -43,18 +47,20 @@ Serial.println(F("Testing BMP280 pressure sensor..."));
     { Serial.println("Could not find AHT20 sensor!");
       isaht20 = 0; }; 
 
-// launch I2C for OLED display 
+// launch I2C bus #2 for OLED display 
+// You may put different GPx pin numbers here if using different board  
+
   Wire1.setSDA(10); // Set SDA pin for I2C1 on RP2040
   Wire1.setSCL(11); // Set SCL pin for I2C1 on RP2040
   Wire1.begin();    // Initialize I2C communication - bus #2
 
-  Serial.begin(115200);
   Serial.println(F("SSD1306 allocation failed"));
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address may be different
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
 
+  // Setup Oled screen - you may rotate it here
   display.clearDisplay();
   display.setTextColor(WHITE);
   display.setRotation(2); //rotates text on OLED 1=90 degrees, 2=180 degrees
@@ -67,7 +73,8 @@ Serial.println(F("Testing BMP280 pressure sensor..."));
 void loop() {
 
   sensors_event_t humidity, temp;
- 
+
+  // clear OLED screen, select font size and set cursor to left top corner
   display.clearDisplay();
   display.setTextSize(2);
   display.setCursor(0, 0);
@@ -86,8 +93,9 @@ void loop() {
   display.println("PRESSURE=");
   display.print(bmp.readPressure() / 100.0F);
   display.println("hPa");
-  
-//  display.print("NPM=");
+
+  // You can use it to display attitude
+//  display.print("ATT=");
 //  display.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
 //  display.print("m");
 
