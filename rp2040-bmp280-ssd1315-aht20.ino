@@ -99,10 +99,15 @@ void loop() {
 //  display.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
 //  display.print("m");
 
-  display.print("HUM=");
-  display.print(humidity.relative_humidity);
-  display.println("%");
+  if (isaht20)
+     {
+      display.print("HUM=");
+      display.print(humidity.relative_humidity);
+      display.println("%");
+     }; 
 
   display.display();  
+  
+  // repeat readings every 1 second
   delay(1000);
 }
