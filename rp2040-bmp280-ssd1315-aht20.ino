@@ -33,10 +33,11 @@ void setup() {
   Wire.setSCL(5); // Set SCL pin for I2C0 on RP2040
   Wire.begin();   // Initialize I2C communication - bus #1
 
-Serial.println(F("Testing pressure sensor..."));
+Serial.println(F("Testing BMP280 pressure sensor..."));
   if (!bmp.begin()) Serial.println(F("Pressure sensor NOT detected!"));
 
 // launching AHT20 sensor
+  Serial.println(F("Testing AHT20 humidity sensor..."));
   isaht20 = 1;
   if (!aht.begin()) 
     { Serial.println("Could not find AHT20 sensor!");
@@ -48,6 +49,7 @@ Serial.println(F("Testing pressure sensor..."));
   Wire1.begin();    // Initialize I2C communication - bus #2
 
   Serial.begin(115200);
+  Serial.println(F("SSD1306 allocation failed"));
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address may be different
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
