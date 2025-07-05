@@ -54,9 +54,9 @@ void setup() {
   Wire1.setSCL(11); // Set SCL pin for I2C1 on RP2040
   Wire1.begin();    // Initialize I2C communication - bus #2
 
-  Serial.println(F("SSD1306 allocation failed"));
+  Serial.println(F("Testing OLED SSD1306/SSD1315 display connection..."));
   if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) { // Address may be different
-    Serial.println(F("SSD1306 allocation failed"));
+    Serial.println(F("OLED SSD1306 allocation failed. ERROR!!!"));
     for(;;); // Don't proceed, loop forever
   }
 
@@ -94,7 +94,7 @@ void loop() {
   display.print(bmp.readPressure() / 100.0F);
   display.println("hPa");
 
-  // You can use it to display attitude
+  // You can use it to display attitude from BMP280 if needed
 //  display.print("ATT=");
 //  display.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
 //  display.print("m");
