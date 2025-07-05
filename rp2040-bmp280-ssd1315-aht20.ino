@@ -81,7 +81,7 @@ void loop() {
       { display.print(temp.temperature); };       // display temp from AHT20
   display.println("C");
                                                                                                                                                                                                                 
-  display.println("CISNIENIE=");
+  display.println("PRESSURE=");
   display.print(bmp.readPressure() / 100.0F);
   display.println("hPa");
   
@@ -89,7 +89,7 @@ void loop() {
 //  display.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
 //  display.print("m");
 
-  display.print("WILG=");
+  display.print("HUM=");
   display.print(humidity.relative_humidity);
   display.println("%");
 
