@@ -95,10 +95,10 @@ void loop() {
   display.print(bmp.readPressure() / 100.0F);
   display.println("hPa");
 
-  // You can use it to display attitude from BMP280 if needed
-//  display.print("ATT=");
+  // You can use it to display attitude from BMP280 if needed - then uncomment next 3 lines
+//  display.print("ALT=");
 //  display.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
-//  display.print("m");
+//  display.println("m");
 
   if (isaht20)
      {
