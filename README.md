@@ -1,5 +1,5 @@
 # rp2040-meteo-station
-Cheap and very simple meteo / weather station  with RP2040 (one/zero) , OLED 0.96 128x64 SSD 1315 / SSD 1306 module, sensors board BMP280 + AHT20 - temperature, humidity, air pressure - displayed
+Cheap and very simple meteo / weather station  with RP2040 (one/zero) , OLED 0.96 128x64 SSD 1315 / SSD 1306 module, sensors board BMP280 + AHT20 - to display : temperature, humidity, air pressure or optionally altitude 
 
 Uses Arduino RP2040/RP2350 core from EARL PHILHOWER : https://github.com/earlephilhower/arduino-pico in board manager URL
 
