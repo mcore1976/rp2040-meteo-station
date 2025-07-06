@@ -3,9 +3,9 @@ Cheap and very simple meteo / weather station  with RP2040 (one/zero) , OLED 0.9
 
 Uses Arduino RP2040/RP2350 core from EARL PHILHOWER : https://github.com/earlephilhower/arduino-pico in board manager URL
 
-Installation of following libraries is required :
-- Adafruit AHTX0  for ATH20 humidity & temperature sensor
-- Adafruit SSD1306 for SSD1315 based OLED 128x64 screen
-- Adafruit BMP280  for BMx air pressure, temperature and height sensor
+Installation of following libraries is required to compile the source code :
+- Adafruit AHTX0  for ATH20 humidity & temperature sensor :  https://github.com/adafruit/Adafruit_AHTX0
+- Adafruit SSD1306 for SSD1315 based OLED 128x64 screen : https://github.com/adafruit/Adafruit_SSD1306
+- Adafruit BMP280  for barometric BMxXXX air pressure, temperature and attitude sensor : https://github.com/adafruit/Adafruit_BMP280_Library
 
 
