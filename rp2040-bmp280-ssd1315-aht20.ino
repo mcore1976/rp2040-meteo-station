@@ -5,6 +5,7 @@
 #include <Adafruit_SSD1306.h> // Library for OLED 0.96 inch display
 #include <Adafruit_BMP280.h>  // library for BMP280 sensor 
 
+// Please setup your OLED screen size here :
 #define SCREEN_WIDTH 128  // OLED display width, in pixels
 #define SCREEN_HEIGHT 64  // OLED display height, in pixels
 #define OLED_RESET     -1 // Reset pin # (or -1 if sharing Arduino reset pin)
