@@ -6,6 +6,6 @@ Uses Arduino RP2040/RP2350 core from EARL PHILHOWER : https://github.com/earleph
 Installation of following libraries is required to compile the source code :
 - Adafruit AHTX0  for ATH20 humidity & temperature sensor :  https://github.com/adafruit/Adafruit_AHTX0
 - Adafruit SSD1306 for SSD1315 based OLED 128x64 screen : https://github.com/adafruit/Adafruit_SSD1306
-- Adafruit BMP280  for barometric BMxXXX air pressure, temperature and attitude sensor : https://github.com/adafruit/Adafruit_BMP280_Library
+- Adafruit BMP280  for barometric Bosch BMxXXX air pressure, temperature and attitude sensor : https://github.com/adafruit/Adafruit_BMP280_Library
 
-
+Low energy consuming portable USB based small device that can be used as altimeter when climbing or gliding. Everyone can build it :-) 
